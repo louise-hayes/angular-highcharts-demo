@@ -1,4 +1,9 @@
-# HighcartsDemo
+# HighcartsDemo for Angular 5
+
+#To launch: 
+run npm install then ng serve
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
