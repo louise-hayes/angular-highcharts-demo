@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { Chart } from 'angular-highcharts';
 
 @Component({
@@ -7,41 +7,49 @@ import { Chart } from 'angular-highcharts';
   styleUrls: ['./bar-chart.component.css']
 })
 export class BarChartComponent implements OnInit {
-  chart = new Chart({
-    chart: {
-      type: 'column'//pie
-    },
-    title: {
-      text: 'Monthly Signups'
-    },
-    credits: {
-      enabled: false
-    },
-    xAxis: {
-      categories: ['Jan', 'Feb', 'March', 'April']
-  },
-  yAxis: {
-      title: {
-          text: 'Patients'
-      }
-  },
-    series: [{
-      name: 'Signups',
-      data: [10, 20,30, 40]
-    },
-    { 
-      name: 'Total Visits',
-      data: [15, 30, 40 ,60]}
+  @Input() barChartData: any;
 
-  ]
-  });
+  chart;
+
+  
 
   // add() {
   //   this.chart.addPoint(Math.floor(Math.random() * 10));
   // }
 
-  constructor() {}
+  constructor() {
 
-  ngOnInit() {}
+  }
+
+  ngOnInit() {
+    console.log(this.barChartData);
+    this.chart = new Chart({
+      chart: {
+        type: 'column'//options are bar for horizontal, column for vertical
+      },
+      title: {
+        text: 'Monthly Signups' //main chart header title
+      },
+      credits: {
+        enabled: false // if true, credits such as a link to the copywrite company could go bottom of chart
+      },
+      xAxis: {
+        categories: ['Jan', 'Feb', 'March', 'April'] //labels for x vertical line 
+    },
+    yAxis: {
+        title: {
+            text: 'Patients' //labels for y horizontal line
+        }
+    },
+      series: [{ //series is columns of data on the chart
+        name: 'Signups',
+        data: this.barChartData.arrayOfSignups //appears on y line. for each category of x, you need a value (Jan is 10, Feb is 20 etc)
+      },
+      { 
+        name: 'Total Visits',
+        data: this.barChartData.arrayOfExits
+      }]
+    });
+  }
 
 }

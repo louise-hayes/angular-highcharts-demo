@@ -1,7 +1,119 @@
-# HighcartsDemo for Angular 5
+# Highcarts Demo Angular 5
+
+#Git: https://github.com/louise-hayes/angular-highcharts-demo.git
 
 #To launch: 
-run npm install then ng serve
+npm install 
+ng serve
+
+#To add the chart components to your app:
+
+##Pie Chart:
+
+- In Parent ```app.module.ts``` 
+- import the component
+
+```
+import { PieChartComponent } from './components/pie-chart/pie-chart.component'
+```
+
+- Add the component to the NgModule declarations:
+```
+@NgModule({
+  declarations: [
+    AppComponent,
+    PieChartComponent
+    
+  ],
+```
+
+
+- In Parent ```app.component.ts``` which will use the chart component
+- Define and assign pie chart values
+```
+export class AppComponent {
+//define and assign pie chart values
+  pieChartData:any;
+  title = 'app';
+
+constructor(){
+  this.pieChartData = {
+    numOfSignups :20,
+    numOfExits : 30,
+    numOfChats : 30,
+    numOfreqests : 20
+  
+  }
+    console.log(this.pieChartData);
+};
+}
+```
+
+- In parent ```app.component.html```
+Invoke the module with previously created pieChartData atrributes
+
+```
+<app-pie-chart [pieChartData]="pieChartData" ></app-pie-chart>
+```
+
+
+##Bar Chart
+
+- In Parent ```app.module.ts``` 
+- import the component
+
+```
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+
+```
+- Add the component to the NgModule declarations:
+
+```
+@NgModule({
+  declarations: [
+    AppComponent,
+    BarChartComponent
+    
+  ],
+```
+
+
+- In Parent ```app.component.ts``` which will use the chart component
+Define and assign bar chart values
+
+```
+export class AppComponent {
+//define and assign bar chart values
+  barChartData:any;
+  title = 'app';
+
+constructor(){
+  this.barChartData = {
+    arrayOfSignups: [10, 20, 30, 40],
+    arrayOfExits: [15, 30, 40 ,60]
+
+  }
+    console.log(this.barChartData);
+};
+}
+```
+- In parent ```app.component.html```
+```
+<app-bar-chart[barChartData]="barChartData"></app-bar-chart> 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
