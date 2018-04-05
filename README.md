@@ -1,23 +1,23 @@
 # Highcarts Demo Angular 5
 
-#Git: https://github.com/louise-hayes/angular-highcharts-demo.git
+## Git: https://github.com/louise-hayes/angular-highcharts-demo.git
 
-#To launch: 
-npm install 
-ng serve
+## To launch: 
+```npm install```
+```ng serve```
 
-#To add the chart components to your app:
+# Add the chart components to your app:
 
-##Pie Chart:
+## Pie Chart:
 
 - In Parent ```app.module.ts``` 
-- import the component
+### Import the component
 
 ```
 import { PieChartComponent } from './components/pie-chart/pie-chart.component'
 ```
 
-- Add the component to the NgModule declarations:
+### Add the component to NgModule declarations:
 ```
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component'
 
 
 - In Parent ```app.component.ts``` which will use the chart component
-- Define and assign pie chart values
+### Define and assign pieChartData values
 ```
 export class AppComponent {
 //define and assign pie chart values
@@ -49,24 +49,24 @@ constructor(){
 }
 ```
 
-- In parent ```app.component.html```
-Invoke the module with previously created pieChartData atrributes
+In parent ```app.component.html```
+### Invoke the <app-pie-chart> module with previously created pieChartData atrribute
 
 ```
 <app-pie-chart [pieChartData]="pieChartData" ></app-pie-chart>
 ```
 
 
-##Bar Chart
+## Bar Chart
 
 - In Parent ```app.module.ts``` 
-- import the component
+### Import the Bar Chart component
 
 ```
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 ```
-- Add the component to the NgModule declarations:
+### Add the Bar Chart component to NgModule declarations:
 
 ```
 @NgModule({
@@ -79,7 +79,7 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 
 - In Parent ```app.component.ts``` which will use the chart component
-Define and assign bar chart values
+### Define and assign Bar Chart data
 
 ```
 export class AppComponent {
@@ -98,6 +98,7 @@ constructor(){
 }
 ```
 - In parent ```app.component.html```
+### Invoke the Bar Chart module with barChartData attribute
 ```
 <app-bar-chart[barChartData]="barChartData"></app-bar-chart> 
 
