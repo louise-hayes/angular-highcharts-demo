@@ -2,6 +2,8 @@
 
 ## Git: https://github.com/louise-hayes/angular-highcharts-demo.git
 
+![highcharts-image](https://user-images.githubusercontent.com/29293985/38378460-c5e2641e-38cb-11e8-9f6d-80590e7a1336.png)
+
 ## To launch: 
 ```npm install```
 ```ng serve```
