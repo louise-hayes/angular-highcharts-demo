@@ -46,7 +46,6 @@ constructor(){
     numOfreqests : 20
   
   }
-    console.log(this.pieChartData);
 };
 }
 ```
@@ -95,7 +94,6 @@ constructor(){
     arrayOfExits: [15, 30, 40 ,60]
 
   }
-    console.log(this.barChartData);
 };
 }
 ```
